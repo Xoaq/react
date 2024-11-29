@@ -1,0 +1,60 @@
+
+Key concept about JSX
+Name Starts with uppercases Character
+The function name must start with uppercase charactes
+Multi-word names should be written in PaScal Case (e.g "MyHeader)
+Its recommended to pick a name that describes the UI building block
+ ("hEADER" MyHeaderBloc)
+
+ The function returns a value that can be renderable content
+ the function must return a value that can be rendered
+ ("Displayed on a screen") by react
+ in must cases REturn a JSX
+ Also allowed: string, number, boolean, null , array of allowed values
+
+
+ - React componen are jut s JS script functions
+
+
+ Built in components:
+-start with lowercase character
+ -only valid officualy validated HTML elements are allowed
+ -Are rendered by react i.e (displayed in the screen)
+
+ Custom Components
+ -Name starts with uppercase characters
+ -Defined by you "wraps" build in or other custom components
+ -React "traverses" the component three until it has only one build in 
+ components left
+
+
+ The propurse of JSX:
+ It allows you to define the target HTML code inside the components
+
+
+ JSX code is used to define a Target UI /HTML code
+
+ What does React do with the Components you use in  the JSX code?
+ A: It derives a component tree thats used to perform commands that update 
+ the web site DOM 
+
+
+
+ 1Set Props(APP Component) 
+ Props are "custom HTML attributes" set on components
+    <coreConcept
+     title="components"
+     description="Core UI Building blocks"/>
+2 Merge into an object
+    React Merges all props into a single object
+    {
+        title:'components',
+        description:'core UI'
+    }
+    
+3   Props are passed to a compponent function 
+    as the first argument by react
+
+    function coreConcept (Props){
+        return <h3>{props.title}<h3>;
+    };                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
