@@ -13,12 +13,12 @@ Its recommended to pick a name that describes the UI building block
  Also allowed: string, number, boolean, null , array of allowed values
 
 
- - React componen are jut s JS script functions
+ - React component are just s JS script functions
 
 
  Built in components:
 -start with lowercase character
- -only valid officualy validated HTML elements are allowed
+ -only valid officialy validated HTML elements are allowed
  -Are rendered by react i.e (displayed in the screen)
 
  Custom Components
@@ -45,6 +45,7 @@ Its recommended to pick a name that describes the UI building block
     <coreConcept
      title="components"
      description="Core UI Building blocks"/>
+
 2 Merge into an object
     React Merges all props into a single object
     {
@@ -57,4 +58,64 @@ Its recommended to pick a name that describes the UI building block
 
     function coreConcept (Props){
         return <h3>{props.title}<h3>;
-    };                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+    };   
+
+
+    Good job!
+That's the right choice. T
+he error is subtle but this example does NOT use object destructuring. 
+So here, the "priority" prop is not pulled out of the props object. 
+Instead, it's now the entire props object that's named "priority". 
+This wouldn't be a problem since the name is up to you.
+ But it's now the entire object that's output in the paragraph, not the "priority" property. 
+ Therefore, the output would not be "Priority: 5" but instead "Priority: [Object object]" (or something like that).      
+
+The special childrn prop
+Content for children
+The conten beetween open and closing tags is used as value 
+ for the special children "prop"
+
+
+App Component
+<modal>
+<h2>Warning</h2>
+<p>Do you want to delete this file? </p>
+</modal>
+
+NOTE:
+<h2>Warning</h2>
+<p>Do you want to delete this file? </p> 
+
+this tags will be takes as compoennt by react wich will be interpretated as {props.children} in the modal component 
+
+Modal component
+
+function modal component
+
+function modal (props){
+return <div id="modal"> {props.children}</div>;
+}
+
+The lesson above described is component composition 
+
+
+
+This tags this section recibe id = "examples"
+ <section id="examples">
+        </section>
+
+
+
+Starts with "on"
+because that's another convention you'll see a lot 
+that should in the end receive a function
+that will be triggered upon an event, should start with on.
+Starting with   on here makes it clear 
+that this prop should be set to a function that will ultimately be triggered based on some event,
+whatever event might be It can be a click on some internal button, but it could also
+ be some HTTP request that finished, anything you need.
+
+
+
+
+9993 533600                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
