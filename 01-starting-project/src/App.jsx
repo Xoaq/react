@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import { Component } from 'react';
 import Header from './components/Header/Header'; 
 import ComponentsImage  from './assets/components.png';
@@ -7,12 +8,19 @@ import TabButton from './components/TabButton';
 
 
 function App() {
+ const  [selectedTopic, setSelectedTopic] = useState('Plases select a button to see the content');
+
+  let tabContent = 'Plases select a button to see the content';
+
   function handleSelect(selectedbutton){
-    //Selected button => 'Components', 'JSX', 'Props', 'State'
-    console.log('Selected button:', selectedbutton);
+    //selectedbutton => 'Components', 'JSX', 'Props', 'State'
+  setSelectedTopic(selectedbutton);
+  console.log('Selected button:', selectedbutton);
+  tabContent = selectedbutton;
+    
 }
 
-
+console.log('AppComponent Excetuting)');
   return (
     <div>
       <Header />
@@ -32,6 +40,7 @@ function App() {
         </section>
         <section id="examples">
           <h2>Examples</h2>
+
           <menu>
           <TabButton onSelect={ ()=> handleSelect('components')}> Components</TabButton>
           <TabButton onSelect={ ()=> handleSelect('jsx')}>JSX</TabButton>
@@ -39,7 +48,7 @@ function App() {
           <TabButton onSelect={()=> handleSelect('state')}>State</TabButton>
           </menu>
 
-          Dinamic content goes here
+          {selectedTopic}
 
         </section>
       </main>
